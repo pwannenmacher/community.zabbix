@@ -5,10 +5,10 @@
     name: TestRule
     host_name: ExampleHost
     params:
-        type: zabbix_agent_active
-        key: 'vfs.fs.discovery'
-        interval: 1m
-        enabled: True
+      type: zabbix_agent_active
+      key: 'vfs.fs.discovery'
+      interval: 1m
+      enabled: True
     state: present
   register: zbxhostrule_new
 
@@ -21,10 +21,10 @@
     name: TestRule
     host_name: ExampleHost
     params:
-        type: zabbix_agent_active
-        key: 'vfs.fs.discovery'
-        interval: 1m
-        enabled: True
+      type: zabbix_agent_active
+      key: 'vfs.fs.discovery'
+      interval: 1m
+      enabled: True
     state: present
   register: zbxhostrule_existing
 
@@ -37,7 +37,7 @@
     name: TestRule
     host_name: ExampleHost
     params:
-        interval: 2m
+      interval: 2m
     state: present
   register: zbxhostrule_changed
 
@@ -72,10 +72,10 @@
     name: TestRule
     template_name: ExampleTemplate
     params:
-        type: zabbix_agent_active
-        key: 'vfs.fs.discovery'
-        interval: 1m
-        enabled: True
+      type: zabbix_agent_active
+      key: 'vfs.fs.discovery'
+      interval: 1m
+      enabled: True
     state: present
   register: zbxtemprule_new
 
@@ -88,10 +88,10 @@
     name: TestRule
     template_name: ExampleTemplate
     params:
-        type: zabbix_agent_active
-        key: 'vfs.fs.discovery'
-        interval: 1m
-        enabled: True
+      type: zabbix_agent_active
+      key: 'vfs.fs.discovery'
+      interval: 1m
+      enabled: True
     state: present
   register: zbxtemprule_existing
 
@@ -104,7 +104,7 @@
     name: TestRule
     template_name: ExampleTemplate
     params:
-        interval: 2m
+      interval: 2m
     state: present
   register: zbxtemprule_changed
 

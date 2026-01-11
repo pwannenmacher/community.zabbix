@@ -29,8 +29,8 @@
     name: ExampleHostRule
     host_name: ExampleHost
     params:
-        type: zabbix_agent_active
-        key: 'vfs.fs.discovery'
-        interval: 1m
-        enabled: True
+      type: zabbix_agent_active
+      key: 'vfs.fs.discovery'
+      interval: 1m
+      enabled: True
     state: present

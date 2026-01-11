@@ -5,21 +5,21 @@
     name: TestItem
     host_name: ExampleHost
     params:
-        type: zabbix_agent_active
-        key: vfs.fs.get
-        value_type: numeric_float
-        units: '%'
-        interval: 1m
-        preprocessing:
-          - type: jsonpath
-            params: '$[?(@.fstype == "ext4")]'
-            error_handler: zabbix_server
-          - type: jsonpath
-            params: "$[*].['bytes', 'inodes'].pused.max()"
-            error_handler: zabbix_server
-        tags:
-          - tag: tag
-            value: value
+      type: zabbix_agent_active
+      key: vfs.fs.get
+      value_type: numeric_float
+      units: '%'
+      interval: 1m
+      preprocessing:
+        - type: jsonpath
+          params: '$[?(@.fstype == "ext4")]'
+          error_handler: zabbix_server
+        - type: jsonpath
+          params: "$[*].['bytes', 'inodes'].pused.max()"
+          error_handler: zabbix_server
+      tags:
+        - tag: tag
+          value: value
     state: present
   register: zbxhostitem_new
 
@@ -32,21 +32,21 @@
     name: TestItem
     host_name: ExampleHost
     params:
-        type: zabbix_agent_active
-        key: vfs.fs.get
-        value_type: numeric_float
-        units: '%'
-        interval: 1m
-        preprocessing:
-          - type: jsonpath
-            params: '$[?(@.fstype == "ext4")]'
-            error_handler: zabbix_server
-          - type: jsonpath
-            params: "$[*].['bytes', 'inodes'].pused.max()"
-            error_handler: zabbix_server
-        tags:
-          - tag: tag
-            value: value
+      type: zabbix_agent_active
+      key: vfs.fs.get
+      value_type: numeric_float
+      units: '%'
+      interval: 1m
+      preprocessing:
+        - type: jsonpath
+          params: '$[?(@.fstype == "ext4")]'
+          error_handler: zabbix_server
+        - type: jsonpath
+          params: "$[*].['bytes', 'inodes'].pused.max()"
+          error_handler: zabbix_server
+      tags:
+        - tag: tag
+          value: value
     state: present
   register: zbxhostitem_existing
 
@@ -94,13 +94,13 @@
     name: TestItem
     host_name: ExampleHost
     params:
-        type: zabbix_agent_active
-        key: vfs.fs.get
-        value_type: text
-        interval: 1m
-        tags:
-          - tag: tag
-            value: value
+      type: zabbix_agent_active
+      key: vfs.fs.get
+      value_type: text
+      interval: 1m
+      tags:
+        - tag: tag
+          value: value
     state: present
   register: zbxhostmstitem_new
 
@@ -113,20 +113,20 @@
     name: TestDependItem
     host_name: ExampleHost
     params:
-        type: dependent_item
-        key: vfs.fs.pused
-        value_type: numeric_float
-        units: '%'
-        master_item:
-          item_name: TestItem
-          host_name: ExampleHost
-        preprocessing:
-          - type: jsonpath
-            params: '$[?(@.fstype == "ext4")]'
-            error_handler: zabbix_server
-          - type: jsonpath
-            params: "$[*].['bytes', 'inodes'].pused.max()"
-            error_handler: zabbix_server
+      type: dependent_item
+      key: vfs.fs.pused
+      value_type: numeric_float
+      units: '%'
+      master_item:
+        item_name: TestItem
+        host_name: ExampleHost
+      preprocessing:
+        - type: jsonpath
+          params: '$[?(@.fstype == "ext4")]'
+          error_handler: zabbix_server
+        - type: jsonpath
+          params: "$[*].['bytes', 'inodes'].pused.max()"
+          error_handler: zabbix_server
     state: present
   register: zbxhostdependitem_new
 
@@ -161,21 +161,21 @@
     name: TestItem
     template_name: ExampleTemplate
     params:
-        type: zabbix_agent_active
-        key: vfs.fs.get
-        value_type: numeric_float
-        units: '%'
-        interval: 1m
-        preprocessing:
-          - type: jsonpath
-            params: '$[?(@.fstype == "ext4")]'
-            error_handler: zabbix_server
-          - type: jsonpath
-            params: "$[*].['bytes', 'inodes'].pused.max()"
-            error_handler: zabbix_server
-        tags:
-          - tag: tag
-            value: value
+      type: zabbix_agent_active
+      key: vfs.fs.get
+      value_type: numeric_float
+      units: '%'
+      interval: 1m
+      preprocessing:
+        - type: jsonpath
+          params: '$[?(@.fstype == "ext4")]'
+          error_handler: zabbix_server
+        - type: jsonpath
+          params: "$[*].['bytes', 'inodes'].pused.max()"
+          error_handler: zabbix_server
+      tags:
+        - tag: tag
+          value: value
     state: present
   register: zbxtempitem_new
 
@@ -188,21 +188,21 @@
     name: TestItem
     template_name: ExampleTemplate
     params:
-        type: zabbix_agent_active
-        key: vfs.fs.get
-        value_type: numeric_float
-        units: '%'
-        interval: 1m
-        preprocessing:
-          - type: jsonpath
-            params: '$[?(@.fstype == "ext4")]'
-            error_handler: zabbix_server
-          - type: jsonpath
-            params: "$[*].['bytes', 'inodes'].pused.max()"
-            error_handler: zabbix_server
-        tags:
-          - tag: tag
-            value: value
+      type: zabbix_agent_active
+      key: vfs.fs.get
+      value_type: numeric_float
+      units: '%'
+      interval: 1m
+      preprocessing:
+        - type: jsonpath
+          params: '$[?(@.fstype == "ext4")]'
+          error_handler: zabbix_server
+        - type: jsonpath
+          params: "$[*].['bytes', 'inodes'].pused.max()"
+          error_handler: zabbix_server
+      tags:
+        - tag: tag
+          value: value
     state: present
   register: zbxtempitem_existing
 

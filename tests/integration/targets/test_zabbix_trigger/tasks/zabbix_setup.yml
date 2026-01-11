@@ -29,10 +29,10 @@
     name: ExampleHostItem
     host_name: ExampleHost
     params:
-        type: zabbix_agent_active
-        key: agent.ping
-        value_type: numeric_unsigned
-        interval: 1m
+      type: zabbix_agent_active
+      key: agent.ping
+      value_type: numeric_unsigned
+      interval: 1m
     state: present
 
 - name: Create test template item
@@ -40,8 +40,8 @@
     name: ExampleTemplateItem
     template_name: ExampleTemplate
     params:
-        type: zabbix_agent_active
-        key: system.cpu.load[percpu,avg1]
-        value_type: numeric_float
-        interval: 1m
+      type: zabbix_agent_active
+      key: system.cpu.load[percpu,avg1]
+      value_type: numeric_float
+      interval: 1m
     state: present

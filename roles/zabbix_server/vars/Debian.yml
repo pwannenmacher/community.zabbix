@@ -7,6 +7,8 @@ mysql_create_dir: ""
 
 zabbix_valid_server_versions:
   # Debian
+  "13":
+    - 7.4
   "12":
     - 7.4
     - 7.2
@@ -19,7 +21,6 @@ zabbix_valid_server_versions:
     - 7.4
     - 7.2
     - 7.0
-    - 6.0
   "22":
     - 7.4
     - 7.2

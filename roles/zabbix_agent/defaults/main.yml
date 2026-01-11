@@ -6,7 +6,7 @@ zabbix_agent_version_check: true
 zabbix_agent2: false
 zabbix_agent_releases_url: "https://services.zabbix.com/updates/v1"
 zabbix_agent_version_minor: "*"
-#zabbix_agent_version_long: 7.4.2
+# zabbix_agent_version_long: 7.4.2
 zabbix_agent_package_remove: false
 zabbix_agent_package: "{{ _zabbix_agent_package | default(zabbix_agent2 | ternary('zabbix-agent2', 'zabbix-agent')) }}"
 zabbix_agent_package_state: present
@@ -16,7 +16,7 @@ zabbix_agent_selinux: false
 zabbix_agent_conf: "{{ zabbix_agent2 | ternary('zabbix_agent2.conf', 'zabbix_agentd.conf') }}"
 zabbix_agent_conf_mode: "0644"
 # Retaining backwards compatability by using the awkwardly named old variable
-zabbix_agent_detect_ip: "{{ not zabbix_agent_dont_detect_ip | default(false) }}" # True
+zabbix_agent_detect_ip: "{{ not zabbix_agent_dont_detect_ip | default(false) }}"  # True
 
 zabbix_agent_pidfile: "{{ _pidfile }}"
 zabbix_agent_service: "{{ _zabbix_agent_service | default(zabbix_agent2 | ternary('zabbix-agent2', 'zabbix-agent')) }}"
@@ -75,9 +75,9 @@ zabbix_api_validate_certs: false
 # API Related Variables
 zabbix_api_create_hostgroup: false
 zabbix_api_create_hosts: false
-zabbix_agent_host_state: present # or absent
+zabbix_agent_host_state: present  # or absent
 zabbix_agent_host_update: true
-zabbix_host_status: enabled # or disabled
+zabbix_host_status: enabled  # or disabled
 zabbix_agent_proxy: null
 zabbix_agent_inventory_mode: disabled
 zabbix_useuip: 1

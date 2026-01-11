@@ -29,10 +29,10 @@
     name: ExampleHostRule
     host_name: ExampleHost
     params:
-        type: zabbix_agent_active
-        key: 'vfs.fs.discovery'
-        interval: 1m
-        enabled: True
+      type: zabbix_agent_active
+      key: 'vfs.fs.discovery'
+      interval: 1m
+      enabled: True
     state: present
 
 - name: Create similar Zabbix discoveryrule on template
@@ -40,9 +40,9 @@
     name: ExampleTemplateRule
     template_name: ExampleTemplate
     params:
-        type: zabbix_trapper
-        key: 'fs.discovery'
-        enabled: True
+      type: zabbix_trapper
+      key: 'fs.discovery'
+      enabled: True
     state: present
 
 - name: Create host item prototype
@@ -51,13 +51,13 @@
     discoveryrule_name: ExampleHostRule
     host_name: ExampleHost
     params:
-        type: zabbix_agent_active
-        key: '{% raw %}vfs.fs.size[{#FSNAME}, pused]{% endraw %}'
-        value_type: numeric_unsigned
-        interval: 1m
-        tags:
-        - tag: tag
-          value: hostitem
+      type: zabbix_agent_active
+      key: '{% raw %}vfs.fs.size[{#FSNAME}, pused]{% endraw %}'
+      value_type: numeric_unsigned
+      interval: 1m
+      tags:
+      - tag: tag
+        value: hostitem
     state: present
 
 - name: Create template item prototype
@@ -66,11 +66,11 @@
     discoveryrule_name: ExampleTemplateRule
     template_name: ExampleTemplate
     params:
-        type: zabbix_agent_active
-        key: '{% raw %}vfs.fs.size[{#FSNAME}, pused ]{% endraw %}'
-        value_type: numeric_unsigned
-        interval: 1m
-        tags:
-        - tag: tag
-          value: templated
+      type: zabbix_agent_active
+      key: '{% raw %}vfs.fs.size[{#FSNAME}, pused ]{% endraw %}'
+      value_type: numeric_unsigned
+      interval: 1m
+      tags:
+      - tag: tag
+        value: templated
     state: present

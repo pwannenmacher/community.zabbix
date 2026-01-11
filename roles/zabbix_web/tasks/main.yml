@@ -77,7 +77,7 @@
     - install
 
 - name: "Debian | Link graphfont.ttf (workaround ZBX-10467)"
-  when: 
+  when:
     - ansible_facts['os_family'] == 'Debian'
     - zabbix_web_version is version ('7.2', '<')
   ansible.builtin.file:

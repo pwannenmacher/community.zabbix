@@ -1,3 +1,4 @@
+---
 - name: remove example host
   community.zabbix.zabbix_host:
     host_name: ExampleHost

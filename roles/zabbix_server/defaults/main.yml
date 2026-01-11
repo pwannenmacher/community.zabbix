@@ -31,7 +31,7 @@ zabbix_server_database_schemas: "{{ _zabbix_server_database_schemas[zabbix_serve
 # SELinux specific
 selinux_allow_zabbix_can_network: true
 
-#Misc.
+# Misc.
 zabbix_server_include_mode: "0755"
 zabbix_server_config: /etc/zabbix/zabbix_server.conf
 zabbix_service_state: started

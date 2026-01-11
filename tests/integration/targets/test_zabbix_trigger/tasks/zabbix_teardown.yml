@@ -1,3 +1,4 @@
+---
 - name: remove test host item
   community.zabbix.zabbix_item:
     name: ExampleHostItem

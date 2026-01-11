@@ -26,7 +26,7 @@
           Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* |
           Where-Object {$_.DisplayName -Like 'Zabbix Agent*'} |
           Select-Object -ExpandProperty PSChildName
-      #DisplayName, DisplayVersion, Publisher, InstallDate, PSChildName
+      # DisplayName, DisplayVersion, Publisher, InstallDate, PSChildName
       register: _res
     - debug:
         var: _res
@@ -80,11 +80,11 @@
       throttle: "{{ zabbix_download_throttle | default(5) | int }}"
 
     # Would be sweet if this worked.
-    #- name: Install Zabbix Agent
-    #  ansible.windows.win_package:
-    #    path: "C:/Users/{{ ansible_user }}/Downloads/{{ zabbix_agent_win_download_package }}"
-    #    arguments: "/l*v zabbix.log /i /qn SERVER={{ zabbix_agent_server }}"
-    #  register: _res
+    # - name: Install Zabbix Agent
+    #   ansible.windows.win_package:
+    #     path: "C:/Users/{{ ansible_user }}/Downloads/{{ zabbix_agent_win_download_package }}"
+    #     arguments: "/l*v zabbix.log /i /qn SERVER={{ zabbix_agent_server }}"
+    #   register: _res
 
     # https://www.zabbix.com/documentation/current/en/manual/installation/install_from_packages/win_msi
     - name: Install Zabbix Agent
@@ -93,7 +93,7 @@
         argv:
           - msiexec
           - /i
-          #- "/l*v zabbix-install.log"
+          # - "/l*v zabbix-install.log"
           - "{{ zabbix_agent_win_package }}"
           - /qn
           - "SERVER={{ zabbix_agent_server }}"

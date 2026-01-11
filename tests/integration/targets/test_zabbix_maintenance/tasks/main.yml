@@ -1,3 +1,4 @@
+---
 # New host create test from here
 - name: "test - Create a new host"
   community.zabbix.zabbix_host:
@@ -195,7 +196,7 @@
       - Linux servers
       - Hypervisors
     desc: "test description"
-    collect_data: yes # required for tags
+    collect_data: yes  # required for tags
     minutes: 90
     state: present
     tags:
@@ -657,7 +658,7 @@
         every: first
         day_of_week: ["Tuesday"]
   register: create_maintenance_tp_monthly_day_of_week_update
-  
+
 - ansible.builtin.assert:
     that:
       - create_maintenance_tp_monthly_day_of_week_update.changed is sameas true
@@ -675,7 +676,7 @@
         every: second
         day_of_week: ["Tuesday"]
   register: create_maintenance_tp_monthly_day_of_week_update_every
-  
+
 - ansible.builtin.assert:
     that:
       - create_maintenance_tp_monthly_day_of_week_update_every.changed is sameas true

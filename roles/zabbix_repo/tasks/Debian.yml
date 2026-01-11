@@ -29,7 +29,7 @@
       (ansible_facts['distribution'] == "Debian" and ansible_facts['distribution_major_version'] < "12")
 
 - name: "Debian | Download gpg key"
-  when: not ansible_check_mode # Because get_url always has changed status in check_mode.
+  when: not ansible_check_mode  # Because get_url always has changed status in check_mode.
   ansible.builtin.get_url:
     url: "{{ zabbix_repo_deb_gpg_key_url }}"
     dest: "{{ zabbix_repo_gpg_key }}"

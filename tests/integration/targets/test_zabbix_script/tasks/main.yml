@@ -668,7 +668,7 @@
 - ansible.builtin.assert:
     that: create_script_url_fail.failed is sameas True
   when: zabbix_version is version('7.0', '<')
-  
+
 
 - name: test - Test manual event action script
   module_defaults:
